@@ -33,26 +33,22 @@ let twoSum = function (arr, target) {
 // twoSum([3, 2, 4], 6);
 
 // 3 4 2
-
+console.log('approach two hash map for better time complexity')
 var twoSum1 = function (nums, target) {
     const hashmap = {}
     for (let i = 0; i < nums.length; i++) {
         const currentNum = nums[i];
         const numToFind = target - currentNum;
 
-        for (let i = 0; i < nums.length; i++) {
-            const currentNum = nums[i];
-            const numToFind = target - currentNum;
-
-            if (hashmap[numToFind] >= 0) {
-                return [hashmap[numToFind], i]
-            } else {
-                hashmap[currentNum] = i;
-            }
+        if (hashmap[numToFind] >= 0) {
+            return [hashmap[numToFind], i]
+        } else {
+            hashmap[currentNum] = i;
         }
-
-
     }
+
+
+
 };
 
 let result = twoSum1([2, 8, 4], 6);
