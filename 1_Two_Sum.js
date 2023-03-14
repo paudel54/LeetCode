@@ -26,8 +26,34 @@ let twoSum = function (arr, target) {
 
 }
 
-let value = twoSum([3, 2, 4], 6);
-console.log('Its a value from two sum', value);
+// let value = twoSum([3, 2, 4], 6);
+// console.log('Its a value from two sum', value);
 
 // twoSum([2, 7, 11, 15], 9);
 // twoSum([3, 2, 4], 6);
+
+// 3 4 2
+
+var twoSum1 = function (nums, target) {
+    const hashmap = {}
+    for (let i = 0; i < nums.length; i++) {
+        const currentNum = nums[i];
+        const numToFind = target - currentNum;
+
+        for (let i = 0; i < nums.length; i++) {
+            const currentNum = nums[i];
+            const numToFind = target - currentNum;
+
+            if (hashmap[numToFind] >= 0) {
+                return [hashmap[numToFind], i]
+            } else {
+                hashmap[currentNum] = i;
+            }
+        }
+
+
+    }
+};
+
+let result = twoSum1([2, 8, 4], 6);
+console.log(result);
