@@ -38,18 +38,20 @@ var twoSum1 = function (nums, target) {
     const hashmap = {}
     for (let i = 0; i < nums.length; i++) {
         const currentNum = nums[i];
+        console.log('Current Num', currentNum);
         const numToFind = target - currentNum;
+        console.log('Num to find', numToFind);
 
         if (hashmap[numToFind] >= 0) {
+            console.log('hashmap num to find', hashmap)
             return [hashmap[numToFind], i]
+
         } else {
             hashmap[currentNum] = i;
+            console.log('hashmap list if no to find not avialble', hashmap)
         }
     }
-
-
-
 };
 
-let result = twoSum1([2, 8, 4], 6);
+let result = twoSum1([2, 7, 11, 5], 7);
 console.log(result);
